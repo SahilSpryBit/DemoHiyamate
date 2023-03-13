@@ -4,6 +4,350 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efeff4"
     tools:context=".activities.BusinessProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toStartOf="@+id/txtSave"
+            android:layout_toEndOf="@+id/iv_back"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Business Profile"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="15dp" />
+
+        <TextView
+            android:id="@+id/txtSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:textSize="18sp"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:alpha="0.6" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_actionbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Company Name"
+                        android:textSize="16sp"
+                        android:textColor="#1d1d1f"
+                        android:alpha="0.6"
+                        android:gravity="start"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_inp_company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="opticalBounds"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_company_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@$?^*+-{}"
+                            android:hint=""
+                            android:padding="15dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnr_abn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:alpha="0.6"
+                        android:textColor="#1d1d1f"
+                        android:text="ABN"
+                        android:textSize="16sp"
+                        android:gravity="start"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_inp_abn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="opticalBounds"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_abn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint=""
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:padding="15dp"
+                            android:singleLine="true" />
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:alpha="0.6"
+                        android:textColor="#1d1d1f"
+                        android:text="Business address"
+                        android:textSize="16sp"
+                        android:gravity="start" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_inp_business_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="opticalBounds"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_business_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint=""
+                            android:padding="15dp" />
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="What service do you provide?"
+                        android:textSize="16sp"
+                        android:textColor="#1d1d1f"
+                        android:alpha="0.6"
+                        android:gravity="start" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_inp_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutMode="opticalBounds"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_service"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:padding="15dp"
+                                android:singleLine="true"
+                                app:flexWrap="wrap" />
+
+                            <com.google.android.flexbox.FlexboxLayout
+                                android:id="@+id/flexService"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginVertical="10dp"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:imeOptions="actionDone"
+                                android:singleLine="true"
+                                android:visibility="gone"
+                                app:flexWrap="wrap">
+
+                            </com.google.android.flexbox.FlexboxLayout>
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_marginStart="5dp"
+                                android:src="@drawable/ic_drop_down"
+                                android:layout_marginEnd="15dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="About"
+                        android:textColor="#1d1d1f"
+                        android:textSize="16sp"
+                        android:alpha="0.6"
+                        android:gravity="start"/>
+
+                    <TextView
+                        android:id="@+id/txtCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_weight="1"
+                        android:alpha="0.60"
+                        android:gravity="start"
+                        android:textColor="#1d1d1f"
+                        android:text="0/1000"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txt_inp_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layoutMode="opticalBounds"
+                    app:counterEnabled="false"
+                    app:counterMaxLength="1000"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_about"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_weight="1"
+                            android:gravity="top"
+                            android:lines="6"
+                            android:maxLength="1000"
+                            android:padding="15dp"
+                            android:text=""/>
+
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

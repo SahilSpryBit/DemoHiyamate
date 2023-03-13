@@ -135,7 +135,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/identification" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -182,7 +182,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/profile_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -228,7 +228,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/business_profile_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -263,7 +263,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/team_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -299,7 +299,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/payment_history_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -334,7 +334,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/payment_method_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -369,7 +369,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/notifications_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -405,7 +405,7 @@
                         android:layout_height="45dp"
                         android:layout_marginStart="5dp"
                         android:padding="10dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/settings_icon" />
 
                     <TextView
                         android:layout_width="match_parent"

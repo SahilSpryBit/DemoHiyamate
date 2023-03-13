@@ -81,7 +81,6 @@ class MoreFragment : Fragment() {
         val setting_layout = view.findViewById<LinearLayout>(R.id.setting_layout)
         val businessProfile = view.findViewById<LinearLayout>(R.id.businessProfile)
 
-
         val sharedPreference =  requireContext().getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
 
         var deviceId = sharedPreference.getString("DEVICE_ID", "")
@@ -134,7 +133,7 @@ class MoreFragment : Fragment() {
                     if(response.body()!!.status == true){
                             baseActivity.progressDialogUtil.hideProgressDialog()
 
-                        Log.d("Testinggg", "Successss")
+                        Log.d("Testinggg", "Successss" + response.body())
                         username!!.text = response.body()!!.data?.company?.name
                         userABN!!.text = "ABN " + response.body()!!.data?.company?.abn
                         address!!.text = response.body()!!.data?.address?.address
