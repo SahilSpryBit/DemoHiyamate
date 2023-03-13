@@ -220,6 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:gravity="center"
+                    android:id="@+id/businessProfile"
                     android:orientation="horizontal">
 
                     <ImageView

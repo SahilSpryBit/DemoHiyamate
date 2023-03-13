@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide.with
 import com.example.demohiyamate.MyApplication
 import com.example.demohiyamate.R
 import com.example.demohiyamate.activities.BaseActivity
+import com.example.demohiyamate.activities.BusinessProfileActivity
 import com.example.demohiyamate.activities.HomeActivity
 import com.example.demohiyamate.activities.SettingActivity
 import com.example.demohiyamate.model.GetCompyInfoRes
@@ -78,6 +79,7 @@ class MoreFragment : Fragment() {
         img_profile = view.findViewById<ImageView>(R.id.img_profile)
         val card_image = view.findViewById<CardView>(R.id.card_image)
         val setting_layout = view.findViewById<LinearLayout>(R.id.setting_layout)
+        val businessProfile = view.findViewById<LinearLayout>(R.id.businessProfile)
 
 
         val sharedPreference =  requireContext().getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
@@ -100,6 +102,12 @@ class MoreFragment : Fragment() {
         setting_layout.setOnClickListener {
 
             var intent = Intent(context, SettingActivity::class.java)
+            startActivity(intent)
+        }
+
+        businessProfile.setOnClickListener {
+
+            var intent = Intent(context, BusinessProfileActivity::class.java)
             startActivity(intent)
         }
 
@@ -154,106 +162,4 @@ class MoreFragment : Fragment() {
 
         })
     }
-
-    /* fun showPictureDialog() {
-      *//*  val pictureDialog = AlertDialog.Builder(MyApplication.appContext!!)
-        pictureDialog.setTitle("Select Action")
-        val pictureDialogItems = arrayOf("Select photo from gallery", "Capture photo from camera")
-        pictureDialog.setItems(pictureDialogItems
-        ) { dialog, which ->
-            when (which) {
-                0 -> choosePhotoFromGallary()
-                1 -> takePhotoFromCamera()
-            }
-        }
-         pictureDialog.create().show()*//*
-
-         choosePhotoFromGallary()
-    }*/
-
-/*    fun choosePhotoFromGallary() {
-        val galleryIntent = Intent(Intent.ACTION_PICK,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-
-        startActivityForResult(galleryIntent, 21)
-    }
-
-    private fun takePhotoFromCamera() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, 31)
-    }
-
-     override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent?) {
-
-        super.onActivityResult(requestCode, resultCode, data)
-        *//* if (resultCode == this.RESULT_CANCELED)
-         {
-         return
-         }*//*
-        if (requestCode == 21)
-        {
-            if (data != null)
-            {
-                val contentURI = data!!.data
-                try
-                {
-                    val bitmap = MediaStore.Images.Media.getBitmap(MyApplication.appContext!!.contentResolver, contentURI)
-                    val path = saveImage(bitmap)
-                    Toast.makeText(MyApplication.appContext!!, "Image Saved!", Toast.LENGTH_SHORT).show()
-                    img_profile!!.setImageBitmap(bitmap)
-
-                }
-                catch (e: IOException) {
-                    e.printStackTrace()
-                    Toast.makeText(MyApplication.appContext!!, "Failed!", Toast.LENGTH_SHORT).show()
-                }
-
-            }
-
-        }
-        else if (requestCode == 31)
-        {
-            val thumbnail = data!!.extras!!.get("data") as Bitmap
-          *//*  imageview!!.setImageBitmap(thumbnail)*//*
-            saveImage(thumbnail)
-            Toast.makeText(MyApplication.appContext!!, "Image Saved!", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    fun saveImage(myBitmap: Bitmap):String {
-        val bytes = ByteArrayOutputStream()
-        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes)
-        val wallpaperDirectory = File(
-            (Environment.getExternalStorageDirectory()).toString() + "/sahil")
-        // have the object build the directory structure, if needed.
-        Log.d("fee",wallpaperDirectory.toString())
-        if (!wallpaperDirectory.exists())
-        {
-
-            wallpaperDirectory.mkdirs()
-        }
-
-        try
-        {
-            Log.d("heel",wallpaperDirectory.toString())
-            val f = File(wallpaperDirectory, ((Calendar.getInstance()
-                .getTimeInMillis()).toString() + ".jpg"))
-            f.createNewFile()
-            val fo = FileOutputStream(f)
-            fo.write(bytes.toByteArray())
-            MediaScannerConnection.scanFile(MyApplication.appContext!!,
-                arrayOf(f.getPath()),
-                arrayOf("image/jpeg"), null)
-            fo.close()
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath())
-
-            return f.getAbsolutePath()
-        }
-        catch (e1: IOException) {
-            e1.printStackTrace()
-        }
-
-        return ""
-    }*/
-
 }
